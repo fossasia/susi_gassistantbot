@@ -1,0 +1,25 @@
+{
+  "name": "susi_google",
+  "version": "1.0.0",
+  "description": "susi on google",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fossasia/susi_gassistantbot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fossasia/susi_gassistantbot/issues"
+  },
+  "homepage": "https://github.com/fossasia/susi_gassistantbot#readme",
+  "dependencies": {
+    "actions-on-google": "^1.1.1",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "request": "^2.81.0"
+  }
+}
