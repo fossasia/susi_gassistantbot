@@ -51,7 +51,6 @@ app.post('/webhook', function(request, response) {
                         var data = (JSON.parse(body)).answers[0].data;
                         var columns = type[0].columns;
                         var key = Object.keys(columns);
-                        var msg;
                         var title = (JSON.parse(body)).query;
                         var list = [];
 
@@ -72,6 +71,26 @@ app.post('/webhook', function(request, response) {
                             .addItems(list[4])
                             .addItems(list[5])
                         );
+                    } else if(type.length == 2 && type[1].type == "rss"){
+                      var data = (JSON.parse(body)).answers[0].data;
+                      var columns = type[1];
+                      var key = Object.keys(columns);
+                      var list = [];
+
+                      for (var i = 1; i < 4; i++) {
+                        list[i] = assistant.buildOptionItem(data[i][key[1]], [key[0], key[1], key[2]])
+                            .setTitle(data[i][key[1]])
+                            .setDescription(key[2].toUpperCase() + ": " + data[i][key[2]] + "\n" + key[3].toUpperCase() + ": " + data[i][key[3]])
+                      }
+
+                      assistant.askWithCarousel(assistant.buildRichResponse()
+                        .addSimpleResponse(ans),
+                        // Build a carousel
+                        assistant.buildCarousel()
+                        .addItems(list[1])
+                        .addItems(list[2])
+                        .addItems(list[3])
+                      );
                     } else {
                         assistant.ask(ans);
                     }
