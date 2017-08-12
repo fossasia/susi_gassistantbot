@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx5
+  namespace: nginx-ingress5
+spec:
+  type: LoadBalancer
+  loadBalancerIP: '35.202.72.61'
+  ports:
+  - port: 80
+    name: http
+  - port: 443
+    name: https
+  selector:
+    app: nginx5

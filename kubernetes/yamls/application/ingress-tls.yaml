@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: google
+  namespace: google
+  annotations:
+    kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  tls:
+  - hosts:
+    - susi-google.tk 
+    secretName: susigoogle-tls
+  rules:
+  - host: susi-google.tk 
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: google
+          servicePort: 80

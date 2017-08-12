@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: google
+  namespace: google
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: google
+    spec:
+      containers:
+      - name: google
+        image: fossasia/susi_gassistantbot:latest-master
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+
