@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 const SUSI_INTENT = 'question';
 
-app.post('/webhook', function(request, response) {
+app.post('/', function(request, response) {
     //console.log('headers: ' + JSON.stringify(request.headers));
     //console.log('body: ' + JSON.stringify(request.body));
 
