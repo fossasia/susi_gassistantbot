@@ -33,7 +33,7 @@ app.post('/', function(request, response) {
 
                 var options = {
                     method: 'GET',
-                    url: 'http://api.asksusi.com/susi/chat.json',
+                    url: 'http://api.susi.ai/susi/chat.json',
                     qs: {
                         timezoneOffset: '-330',
                         q: query
