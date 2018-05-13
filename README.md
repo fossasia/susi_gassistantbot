@@ -1,3 +1,7 @@
+# SUSI Google Assistant Bot
+
+[![Build Status](https://travis-ci.org/fossasia/susi_gassistantbot.svg?branch=master)](https://travis-ci.org/fossasia/susi_gassistantbot)
+
 ## Setup:
 
 1. First of all we will make a project on [developer&#39;s console](https://console.actions.google.com/) of Actions on Google and after that you will set up action on your project using API.AI
